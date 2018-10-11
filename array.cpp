@@ -7,7 +7,6 @@ using namespace std;
 
 
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
   int inputSize = 0;
   cout << "How big you want the array: ";
   cin >> inputSize;
