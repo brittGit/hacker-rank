@@ -24,24 +24,27 @@ int main() {
 
   	int n, q, k;
     cout << "Enter values for n and q: "; //size of 2d array
-  	cin >> n;
-  	cin >> q;
+  	cin >> n >> q;
   
-  	// Declaring/initializing an array that will contain arrays of int's (AKA 2D array)
-    int** a = new int*[n];
+  	// Declaring/initializing an vector that will contain a vector of int's (AKA 2D vector)
+    vector<vector<int> > a;
+    //int** a = new int*[n];
   	
-  //how big the arrays will be then filling with numbers
+  //how big the arrays will be then filling with numbers, k = size of vector
     for(int i = 0; i < n; i++){
-      cout << "How big you want the array: "; //size of each array in the 2D array
+      cout << "How big you want the vector: "; //size of each array in the 2D array
       cin >> k;
 
       // Initializing a[i] to an array of int's
-      a[i] = new int[k];
+      //a[i] = new int[k];
+      vector<int> temp;
       
-      //filling a[i] with numbers
+      //filling temp vector with numbers
       for(int j = 0; j < k; j++){
-    	cout << "What numbers do you want in the array: ";
-    	cin >> a[i][j];
+        int value;
+    	  cout << "What numbers do you want in the array: ";
+    	  cin >> value;
+        temp.push_back(value);
       /*
       k = 3         k = 5
           i  j        i  j
@@ -52,6 +55,7 @@ int main() {
                     a[1][4]
       */
     }
+    a.push_back(temp);
   }
 
   /*
@@ -63,8 +67,7 @@ int main() {
     for(int x = 0; x < q; x++){
       int i, j = 0;
       cout << "What numbers do you want in query (i and j) " << x << ": \n";
-      cin >> i;
-      cin >> j;
+      cin >> i >> j;
 
    /*
       2 2
@@ -73,13 +76,7 @@ int main() {
       0 1 
       1 3
   */
-
       cout << a[i][j] << "\n";
     }
-
-    
-    
-  
-    delete[] a;
     return 0;
 }
