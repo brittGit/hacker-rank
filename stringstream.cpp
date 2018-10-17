@@ -10,17 +10,14 @@ vector<int> parseInts(string str) {
   
   char ch;
   int number;
+  int i = 0;
   
-   int i = 0;
   // Parse the string
   while ( ss >> number ){ //23 4 56
     integers.push_back ( number );  //23 4 56
   	i++;
-    
     ss >> ch; 
-
   }
-
   return integers;
 }
 
